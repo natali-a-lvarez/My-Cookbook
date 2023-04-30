@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Delicious Food Recipes</h1>
+        <h1>My Recipes</h1>
       </header>
       <RecipeList deleteHandler={deleteHandler} recipeData={recipes} />
       <RecipeCreate createRecipe={createRecipe} recipeData={recipes} />
