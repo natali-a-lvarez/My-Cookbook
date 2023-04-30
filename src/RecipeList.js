@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./RecipeList.css";
-
 function RecipeList({ recipeData, deleteHandler }) {
   function isOdd(num) {
     return num % 2;
@@ -22,6 +20,7 @@ function RecipeList({ recipeData, deleteHandler }) {
             onClick={() => deleteHandler(index)}
             name="delete"
             type="delete"
+            className="deleteBtn"
           >
             Delete
           </button>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./RecipeCreate.css";
 
 function RecipeCreate({ createRecipe, recipeData }) {
   const [name, setName] = useState("");
@@ -17,6 +16,11 @@ function RecipeCreate({ createRecipe, recipeData }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     createRecipe({ name, cuisine, photo, ingredients, preparation });
+    setName("");
+    setCuisine("");
+    setPhoto("");
+    setIngredients("");
+    setPreparation("");
   };
 
   function isOdd(num) {
@@ -34,17 +38,17 @@ function RecipeCreate({ createRecipe, recipeData }) {
           <tr>
             <td className="narrow">
               <input
-                type="text"
                 name="name"
                 id="name"
                 placeholder="Name"
                 onChange={handleNameChange}
+                value={name}
               />
             </td>
             <td className="narrow">
               <input
-                type="text"
                 name="cuisine"
+                value={cuisine}
                 id="cuisine"
                 placeholder="Cuisine"
                 onChange={handleCuisineChange}
@@ -52,8 +56,9 @@ function RecipeCreate({ createRecipe, recipeData }) {
             </td>
             <td>
               <input
-                type="text"
+                type="url"
                 name="photo"
+                value={photo}
                 id="photo"
                 placeholder="URL"
                 onChange={handlePhotoChange}
@@ -62,6 +67,7 @@ function RecipeCreate({ createRecipe, recipeData }) {
             <td>
               <textarea
                 name="ingredients"
+                value={ingredients}
                 id="ingredients"
                 placeholder="Ingredients"
                 onChange={handleIngredientsChange}
@@ -72,12 +78,15 @@ function RecipeCreate({ createRecipe, recipeData }) {
                 name="preparation"
                 id="preparation"
                 placeholder="Preparation"
+                value={preparation}
                 onChange={handlePreparationChange}
               />
             </td>
 
             <td>
-              <button type="submit">Create</button>
+              <button type="submit" className="createBtn">
+                Create
+              </button>
             </td>
           </tr>
         </tbody>

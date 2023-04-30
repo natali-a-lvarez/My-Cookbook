@@ -11,13 +11,31 @@ label {
 
 header {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   text-align: center;
-  font-size: 40px;
+  font-size: 35px;
+  color: rgb(36, 36, 36);
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .diffBg {
   background-color: rgb(255, 192, 230);
+}
+
+.deleteBtn {
+  background-color: rgb(212, 81, 172);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.createBtn {
+  background-color: rgb(119, 78, 193);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
 /* typography */
@@ -53,6 +71,8 @@ table {
   border-collapse: collapse;
   overflow: hidden;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 .content_td p {
@@ -60,6 +80,11 @@ table {
   max-height: 100px;
   overflow-y: auto;
   text-overflow: ellipsis;
+}
+
+.img {
+  width: 70%;
+  border-radius: 10px;
 }
 
 /* Column Size for thead */
@@ -77,7 +102,20 @@ tbody .narrow {
 }
 
 /* FORM */
+form {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+form table {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
 input,
 textarea {
   font-family: Georgia, "Times New Roman", Times, serif;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgb(212, 81, 172);
 }
