@@ -3,11 +3,13 @@ import React from "react";
 import "./RecipeList.css";
 
 function RecipeList({ recipeData, deleteHandler }) {
-  console.log(recipeData);
-  // TODO: Display the list of recipes using the structure of table that is provided.
+  function isOdd(num) {
+    return num % 2;
+  }
+
   const rows = recipeData.map(
     ({ name, cuisine, photo, ingredients, preparation }, index) => (
-      <tr key={index}>
+      <tr className={isOdd(index) === 0 ? "diffBg" : ""} key={index}>
         <td className="narrow">{name}</td>
         <td className="narrow">{cuisine}</td>
         <td>
@@ -16,16 +18,17 @@ function RecipeList({ recipeData, deleteHandler }) {
         <td>{ingredients}</td>
         <td>{preparation}</td>
         <td>
-          <button onClick={() => deleteHandler(index)} type="delete">
+          <button
+            onClick={() => deleteHandler(index)}
+            name="delete"
+            type="delete"
+          >
             Delete
           </button>
         </td>
       </tr>
     )
   );
-
-  // TODO: Create at least one additional component that is used by this component.
-  // TODO: Each recipe row must have a delete button - <button name="delete">Delete</button> - that deletes the post when clicked
 
   return (
     <div className="recipe-list">

@@ -16,6 +16,10 @@ header {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+.diffBg {
+  background-color: rgb(255, 192, 230);
+}
+
 /* typography */
 
 html {

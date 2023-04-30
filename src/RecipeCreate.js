@@ -1,31 +1,34 @@
 import React, { useState } from "react";
 import "./RecipeCreate.css";
 
-function RecipeCreate({ createRecipe }) {
+function RecipeCreate({ createRecipe, recipeData }) {
   const [name, setName] = useState("");
   const [cuisine, setCuisine] = useState("");
-  const [url, setUrl] = useState("");
+  const [photo, setPhoto] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [preparation, setPreparation] = useState("");
 
   const handleNameChange = (event) => setName(event.target.value);
   const handleCuisineChange = (event) => setCuisine(event.target.value);
-  const handleUrlChange = (event) => setUrl(event.target.value);
+  const handlePhotoChange = (event) => setPhoto(event.target.value);
   const handleIngredientsChange = (event) => setIngredients(event.target.value);
   const handlePreparationChange = (event) => setPreparation(event.target.value);
 
-  // TODO: When the form is submitted, a new recipe should be created, and the form contents cleared.
-  // TODO: Add the required input and textarea form elements.
-  // TODO: Add the required submit and change handlers
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Submitted:");
-    createRecipe({ name, cuisine, url, ingredients, preparation });
+    createRecipe({ name, cuisine, photo, ingredients, preparation });
   };
 
+  function isOdd(num) {
+    return num % 2;
+  }
+
   return (
-    <form onSubmit={handleSubmit} name="create">
+    <form
+      onSubmit={handleSubmit}
+      name="create"
+      className={isOdd(recipeData.length) === 0 ? "diffBg" : ""}
+    >
       <table>
         <tbody>
           <tr>
@@ -53,7 +56,7 @@ function RecipeCreate({ createRecipe }) {
                 name="photo"
                 id="photo"
                 placeholder="URL"
-                onChange={handleUrlChange}
+                onChange={handlePhotoChange}
               />
             </td>
             <td>
