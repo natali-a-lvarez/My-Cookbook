@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display+SC");
 
+body {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
 .App {
   padding: 1em;
 }
@@ -10,19 +15,18 @@ label {
 }
 
 header {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
   text-align: center;
   font-size: 35px;
-  color: rgb(36, 36, 36);
+  color: rgb(255, 255, 255);
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .diffBg {
-  background-color: rgb(255, 192, 230);
+  background-color: rgb(108, 108, 108);
 }
 
 .deleteBtn {
+  cursor: pointer;
   background-color: rgb(212, 81, 172);
   color: white;
   border: none;
@@ -30,12 +34,21 @@ header {
   border-radius: 10px;
 }
 
+.deleteBtn:hover {
+  background-color: rgb(169, 63, 138);
+}
+
 .createBtn {
-  background-color: rgb(119, 78, 193);
-  color: white;
+  cursor: pointer;
+  background-color: rgb(117, 213, 234);
+  color: #1e1e1e;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
+}
+
+.createBtn:hover {
+  background-color: rgb(87, 161, 177);
 }
 
 /* typography */
@@ -66,11 +79,11 @@ td {
 /* table */
 
 table {
+  box-shadow: 0 0 1px rgb(255, 255, 255);
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
   overflow: hidden;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
@@ -108,6 +121,7 @@ form {
 }
 
 form table {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -117,5 +131,6 @@ textarea {
   font-family: Georgia, "Times New Roman", Times, serif;
   width: 100%;
   border-radius: 10px;
-  border: 1px solid rgb(212, 81, 172);
+  border: 1px solid #1e1e1e;
+  background-color: #ececec;
 }
